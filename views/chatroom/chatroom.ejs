@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from,Promise,Symbol,Object.setPrototypeOf,Object.getOwnPropertySymbols,Set"></script>
+<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <h1><a href="/" id="nav-logo">chaTech;</a></h1>
+        <!-- Nav Links, Hidden By Default -->
+        <ul>
+            <li><a href="/signin" class="nav-links">Admin</a></li>
+            <li><a href="/about" class="nav-links">About</a></li>
+            <li><a href="/signup" action="/signup" method="get">Sign up</a></li>
+            
+
+
+        </ul>
+
+        <!-- Burger Menu Button -->
+        <a href="javascript:void(0)" id="burger-menu"><i class="fa fa-bars"></i></a>
+
+        <!-- Burger Menu List -->
+        <section id="burger-menu-list" class="hide-burger-menu">
+            <ul>
+                <li><a href="/signin" class="nav-links">Admin</a></li>
+                <li><a href="/about" class="nav-links">About</a></li>
+                <li><a href="/signup" class="nav-links" action="/signup" method="get">Sign up</a></li>
+
+                <!-- Chatrooms Nav Inside Burger Menu -->
+                <p id="chatroom-nav-header" class="nav-links nav-links-header">chatrooms</p>
+                <% list_room.forEach(element=>{ %>
+                  <form action="chatrooms" method="post" id="select_room" class="select-room-burger-menu-form">
+                      <input hidden type="text" name="room_id" value="<%= element.roomid %>">
+                      <input hidden type="text" name="user" value="<%= user %>">
+                      <input hidden type="text" name="participantid" value="<%= participantid %>">
+                              <% if(element.roomid==room_id){%>
+                      <button  class="nav-links nav-links-chatroom-active" type="submit"><%= element.name %></button>
+                      <%}else{ %>
+                          <button  class="nav-links nav-links-chatroom" type="submit"><%= element.name %></button>
+                          <%}%>
+                  </form>
+              <% }) %>
+                
+            </ul>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="chatroom-container">
+            <section id="message-container">
+                <section id="inner-message-container">
+                   
+                   
+                    <!-- <p class="retrieved-message">
+                        <span class="retrieved-message-name">Arkhameedis</span>
+                        <span class="retrieved-message-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, repellendus.</span>
+                        <span class="retrieved-message-time"> 12:36</span>
+                    </p> -->
+
+                    <% sms.forEach(massage=>{ %>
+                        <p class="retrieved-message">
+                            <span class="retrieved-message-name"><%= massage.name %></span>
+                            <span class="retrieved-message-body"><%= massage.messagebody %></span>
+                            <span class="retrieved-message-time"><%= massage.time %></span>
+                        </p>
+                    <% }) %>
+
+                </section>
+            </section>
+            <section id="send-message-container">
+                <form action='chatrooms2' method="post" id="input-message-form" onsubmit="send(event)">
+                    <input name="user" type="hidden" value='<%= user %>'>
+                    <input name="room_id" type="hidden" value='<%= room_id %>'>
+                    <input name="participantid" type="hidden" value='<%= participantid %>'>
+    
+                    <textarea name="message" id="message" placeholder="Type your message..." required
+                        autocomplete="off"></textarea>
+                    <button  id = "sendButton" type="submit">send</button>
+                </form>
+            </section>
+            <section id="chatroom-nav">
+
+              <p id="chatroom-nav-header">chat room nav</p>
+                <% list_room.forEach(element=>{ %>
+                    <form action="chatrooms" method="post" id="select_room">
+                        <input hidden type="text" name="room_id" value="<%= element.roomid %>">
+                        <input hidden type="text" name="user" value="<%= user %>">
+                        <input hidden type="text" name="participantid" value="<%= participantid %>">
+                        <% if(element.roomid==room_id){%>
+                        <button  class="chatroom-name2" type="submit"><%= element.name %></button>
+                        <%}else{ %>
+                            <button  class="chatroom-name" type="submit"><%= element.name %></button>
+                            <%}%>
+                    </form>
+                <% }) %>
+
+            </section>
+            <section id="tbd">
+                <p><%= user %></p>
+                <!-- <p><%= participantid %></p> -->
+            </section>
+
+
+
+            
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../app.js"> </script>
+
+
+    <script>
+        $('#burger-menu').click(function() {
+            $('#burger-menu-list').toggleClass('hide-burger-menu');
+        });
+    </script>
+
+</body>
+
+</html>

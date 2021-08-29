@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../public/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>chaTech</title>
+</head>
+<body>
+
+  <header>
+    <!-- Logo -->
+    <h1><a href="/views/pages/index.html" id="nav-logo">chaTech;</a></h1>
+    <!-- Nav Links, Hidden By Default -->
+    <ul>
+      <li><a href="./admin/dashboard.html" class="nav-links">Admin</a></li>
+      <li><a href="#" class="nav-links">About</a></li>
+    </ul>
+    <!-- Burger Menu Button -->
+    <a href="javascript:void(0)" id="burger-menu"><i class="fa fa-bars"></i></a>
+
+    <!-- Burger Menu List -->
+    <section id="burger-menu-list" class="hide-burger-menu">
+      <ul>
+        <li><a href="./admin/dashboard.html" class="nav-links">Admin</a></li>
+        <li><a href="#" class="nav-links">About</a></li>
+      </ul>
+    </section> 
+  </header>
+
+  <main>
+ 
+    <section id="chatroom-container">
+
+      <section id="message-container">
+        <section id="inner-message-container">
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Mahmoud</span>
+            <span class="retrieved-message-body">Lorem, ipsum dolor.</span>
+            <span class="retrieved-message-time"> 12:31</span>
+          </p>
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Ali</span>
+            <span class="retrieved-message-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, nihil cumque?</span>
+            <span class="retrieved-message-time"> 12:32</span>
+          </p>
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Naeem</span>
+            <span class="retrieved-message-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias cupiditate rem incidunt repellendus, expedita recusandae molestiae autem. Fugiat optio sapiente illo autem ab in veritatis fugit! Similique praesentium temporibus asperiores.</span>
+            <span class="retrieved-message-time"> 12:33</span>
+          </p>
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Aseel</span>
+            <span class="retrieved-message-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo eveniet fugit reprehenderit laudantium aut nisi iure ad cumque nobis.</span>
+            <span class="retrieved-message-time"> 12:34</span>
+          </p>
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Hamzah</span>
+            <span class="retrieved-message-body">Lorem ipsum dolor sit amet.</span>
+            <span class="retrieved-message-time"> 12:35</span>
+          </p>
+          <p class="retrieved-message">
+            <span class="retrieved-message-name">Arkhameedis</span>
+            <span class="retrieved-message-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, repellendus.</span>
+            <span class="retrieved-message-time"> 12:36</span>
+          </p>
+        </section>
+      </section>
+
+      <section id="send-message-container">
+        <form action="" method="post" id="input-message-form" >
+          <!-- <input type="text"  id="input-message" name="input-message" placeholder="type a message ..." required autocomplete="off"> -->
+          <textarea name="input-message" id="input-message" placeholder="Type here baleez..." required autocomplete="off"></textarea>
+          <button type="submit">send</button>
+        </form>
+      </section>
+
+      <section id="chatroom-nav">
+        <p id="chatroom-nav-header">chat room nav</p>
+        <p class="chatroom-name"><a href="#">Javascript; W Bas</a></p>
+        <p class="chatroom-name"><a href="#">Python For-Life!</a></p>
+        <p class="chatroom-name"><a href="#">SQL All-Day-Long</a></p>
+        <p class="chatroom-name"><a href="#">Regex Heroes</a></p>
+        <p class="chatroom-name"><a href="#">CSS Legends</a></p>
+        <p class="chatroom-name"><a href="#">Javascript; W Bas</a></p>
+        <p class="chatroom-name"><a href="#">Python For-Life!</a></p>
+        <p class="chatroom-name"><a href="#">SQL All-Day-Long</a></p>
+        <p class="chatroom-name"><a href="#">Regex Heroes</a></p>
+        <p class="chatroom-name"><a href="#">CSS Legends</a></p>
+      </section>
+
+      <section id="tbd">
+        <p>TBD</p>
+      </section>
+
+    </section>
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2021 chaTech;</p>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $('#burger-menu').click(function() {
+      $('#burger-menu-list').toggleClass('hide-burger-menu');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../public/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>chaTech</title>
+</head>
+<body>
+
+  <header>
+    <!-- Logo -->
+    <h1><a href="/views/pages/index.html" id="nav-logo">chaTech;</a></h1>
+    <!-- Nav Links, Hidden By Default -->
+    <ul>
+      <li><a href="./admin/dashboard.html" class="nav-links">Admin</a></li>
+      <li><a href="#" class="nav-links">About</a></li>
+    </ul>
+    <!-- Burger Menu Button -->
+    <a href="javascript:void(0)" id="burger-menu"><i class="fa fa-bars"></i></a>
+
+    <!-- Burger Menu List -->
+    <section id="burger-menu-list" class="hide-burger-menu">
+      <ul>
+        <li><a href="./admin/dashboard.html" class="nav-links">Admin</a></li>
+        <li><a href="#" class="nav-links">About</a></li>
+      </ul>
+    </section> 
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero-image">
+      <section id="hero-text-and-form">
+        <p id="hero-text">Short One-Liner Here</p>
+        <form id="hero-form" action="#" method="post">
+          <input type="text" name="name" id="hero-section-name" placeholder="Your Name" required autocomplete="off"><br>
+          <input type="text" name="email" id="hero-section-name" placeholder="Your Email" required autocomplete="off"><br>
+          <button type="submit">Let's Go</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2021 chaTech;</p>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $('#burger-menu').click(function() {
+      $('#burger-menu-list').toggleClass('hide-burger-menu');
+    });
+  </script>
+</body>
+</html>

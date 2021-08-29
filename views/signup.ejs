@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('./partials/header.ejs') %>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero-image">
+            
+            <section id="hero-text-and-form">
+                <p id="hero-text">where techies connect!</p>
+                
+
+                <form id="sing_up" action="/check_signup" method="post">
+                    <p><%= error_ms %></p>
+
+                    <input type="text" name="name" id="hero-section-name" placeholder="Your Name" required autocomplete="off" value="<%= name %>"   class="signupInput"><br>
+                    <input type="text" name="email" id="hero-section-name" placeholder="Your Email" required autocomplete="off" value="<%= email %>" class="signupInput"><br>
+                    <input type="password" name="password" id="hero-section-name" placeholder="Your password" required autocomplete="off" class="signupInput"><br>
+                    <input type="password" name="password2" id="hero-section-name" placeholder="re-type password" required autocomplete="off" class="signupInput"><br>
+                    <button type="submit" class="signupInput-button">Let's Go</button>
+
+                </form>
+
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#burger-menu').click(function() {
+            $('#burger-menu-list').toggleClass('hide-burger-menu');
+        });
+    </script>
+
+</body>
+
+</html>

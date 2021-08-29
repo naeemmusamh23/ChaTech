@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('./partials/header.ejs') %>
+    </header>
+
+    <main>
+        <br>
+        <div>
+            <h3 class="header-about">About us</h3>
+            <br>
+            <p class="para">
+                A free live chat application that easily connects users with new people in the tech field, through public chat rooms. each room has specific subject, such as python chat room, People can either give or take free consultations, or collaborate with each
+                other. and the user can join to many rooms as he want at any time.
+            </p>
+        </div>
+        <br>
+        <p class="team-icon">Teams Member</p>
+        <div class="columns">
+            <div class="deatils">
+                <h2>Ali Baker Sartawi</h2>
+                <br>
+                <li><a href="https://github.com/AliBakerSartawi"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <br>
+            </div>
+            <div class="deatils">
+                <h2>Mahmoud AL-Zoubi</h2>
+                <br>
+                <li><a href="https://github.com/Mahmoud-alzoubi95"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <br>
+            </div>
+            <div class="deatils">
+                <h2>Aseel AL-Zweri</h2>
+                <br>
+                <li><a href="https://github.com/Aseel-Z"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <br>
+            </div>
+            <div class="deatils">
+                <h2>Hamza Abu Suilik</h2>
+                <br>
+                <li><a href="https://github.com/HamzhSuilik"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <br>
+            </div>
+            <div class="deatils">
+                <h2>Naeem Musamh</h2>
+                <br>
+                <li><a href="https://github.com/naeemmusamh"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <br>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#burger-menu').click(function() {
+            $('#burger-menu-list').toggleClass('hide-burger-menu');
+        });
+    </script>
+
+</body>
+
+</html>

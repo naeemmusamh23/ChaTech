@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../public/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>chaTech</title>
+</head>
+<body>
+
+  <header>
+    <!-- Logo -->
+    <h1><a href="/views/pages/index.html" id="nav-logo">chaTech;</a></h1>
+    <!-- Nav Links, Hidden By Default -->
+    <ul>
+      <li><a href="#" class="nav-links">Admin</a></li>
+      <li><a href="#" class="nav-links">About</a></li>
+    </ul>
+    <!-- Burger Menu Button -->
+    <a href="javascript:void(0)" id="burger-menu"><i class="fa fa-bars"></i></a>
+
+    <!-- Burger Menu List -->
+    <section id="burger-menu-list" class="hide-burger-menu">
+      <ul>
+        <li><a href="#" class="nav-links">Admin</a></li>
+        <li><a href="#" class="nav-links">About</a></li>
+      </ul>
+    </section> 
+  </header>
+
+  <main>
+
+    <section id="dashboard">
+      
+      <section id="manage-chatrooms">
+        <p id="dashboard-header">Chatroom Dashboard</p>
+        <form id="add-chatroom-form" action="#" method="post">
+          <input type="text" name="add-chatroom" id="add-chatroom" placeholder="New Chatroom Name" required autocomplete="off">
+          <button type="submit">ADD</button>
+        </form>
+
+        <!-- Previous Chatrooms Section -->
+        <section class="chatroom-dashboard">
+          <p class="chatroom-name-dashboard">JavaScript;</p>
+          <form class="edit-chatroom-form" action="#" method="post">
+            <button type="submit">EDIT</button>
+          </form>
+          <form class="delete-chatroom-form" action="#" method="post">
+            <button type="submit">DELETE</button>
+          </form>
+        </section>
+        
+        <section class="chatroom-dashboard">
+          <p class="chatroom-name-dashboard">Python jflsdkjf skvnmlskdfj ksdlvmsldfg lvlskdjf v</p>
+          <form class="edit-chatroom-form" action="#" method="post">
+            <button type="submit">EDIT</button>
+          </form>
+          <form class="delete-chatroom-form" action="#" method="post">
+            <button type="submit">DELETE</button>
+          </form>
+        </section>
+
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2021 chaTech;</p>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $('#burger-menu').click(function() {
+      $('#burger-menu-list').toggleClass('hide-burger-menu');
+    });
+  </script>
+</body>
+</html>

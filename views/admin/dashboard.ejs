@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <section id="manage-chatrooms">
+                <p id="dashboard-header">Chatroom Dashboard</p>
+                <form id="add-chatroom-form" action="/dashboard" method="post">
+                    <input type="text" name="chatroom" id="add-chatroom" placeholder="New Chatroom Name" required autocomplete="off">
+                    <button type="submit">ADD</button>
+                </form>
+                <!-- Previous Chatrooms Section -->
+                <section id="previous-chatrooms-dashboard">
+                <% list.forEach(element=>{ %>
+                    <section class="chatroom-dashboard">
+                        <p class="chatroom-name-dashboard"><%= element.name %></p>
+                        <!-- <form class="edit-chatroom-form">
+                        </form> -->
+                        <button class="edit-chatroom-form" type="submit">EDIT</button>
+                        <form class="edit-chatroom-form-hidden edit-chatroom-form-fixed" action="/dashboard/<%= element.roomid %>?_method=PUT" method="post">
+                          <input type="text" name="name" value="<%= element.name %>" required autocomplete="off">
+                          <button type="submit">CONFIRM</button>
+                        </form>
+                        <form class="delete-chatroom-form" action="/dashboard/<%= element.roomid %>?_method=DELETE" method="post">
+                            <input type="hidden" name="roomid" value="<%= element.roomid %>">
+                            <button type="submit">DELETE</button>
+                        </form>
+                    </section>
+                <% }) %> 
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#burger-menu').click(function() {
+            $('#burger-menu-list').toggleClass('hide-burger-menu');
+        });
+        $('.edit-chatroom-form').click(function() {
+          $(this).next().toggleClass('edit-chatroom-form-hidden');
+          $(this).prev().toggleClass('edit-chatroom-form-hidden');
+        })
+    </script>
+
+</body>
+
+</html>
