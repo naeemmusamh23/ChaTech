@@ -23,7 +23,7 @@
 
 ### Deploy Link
 
-[Live Server](chatech.herokuapp.com)
+## [Live Server](chatech.herokuapp.com)
 
 ## Wiremframes
 
